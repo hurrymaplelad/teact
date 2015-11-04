@@ -1,5 +1,6 @@
 expect = require 'expect.js'
-{render, raw, cede, div, p, strong, a} = require '../src/teact'
+{raw, cede, div, p, strong, a} = require '../src/teact'
+{render} = require './helpers'
 
 describe 'render', ->
   describe 'nested in a template', ->

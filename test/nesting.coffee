@@ -1,9 +1,10 @@
 expect = require 'expect.js'
-{render, div, p} = require '../src/teact'
+{div, p} = require '../src/teact'
+{render} = require './helpers'
 
 describe 'nesting templates', ->
   it 'renders nested template in the same output', ->
-    user = 
+    user =
       first: 'Huevo'
       last: 'Bueno'
 

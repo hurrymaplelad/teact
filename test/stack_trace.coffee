@@ -1,5 +1,6 @@
 expect = require 'expect.js'
-{render, div, p} = require '../src/teact'
+{div, p} = require '../src/teact'
+{render} = require './helpers'
 
 describe 'stack trace', ->
   it 'should contain crel names', ->

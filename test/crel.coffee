@@ -1,5 +1,6 @@
 expect = require 'expect.js'
-{render, p, div, script} = require '../src/teact'
+{p, div, script} = require '../src/teact'
+{render} = require './helpers'
 
 describe 'crel', ->
   it 'renders text verbatim', ->

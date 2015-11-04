@@ -1,5 +1,6 @@
 expect = require 'expect.js'
-{render, img, br, link} = require '../src/teact'
+{img, br, link} = require '../src/teact'
+{render} = require './helpers'
 
 describe 'Self Closing Tags', ->
   describe '<img/>', ->

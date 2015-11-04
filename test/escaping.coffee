@@ -1,5 +1,6 @@
 expect = require 'expect.js'
-{render, raw, script, escape, h1, input} = require '../src/teact'
+{raw, script, escape, h1, input} = require '../src/teact'
+{render} = require './helpers'
 
 describe 'Auto escaping', ->
   describe 'a script crel', ->

@@ -39,20 +39,6 @@ class Teact
     @stack = stack
     return previous
 
-  render: (template, args...) ->
-    ReactDOM = module['require']('react-dom/server')
-
-    previous = @resetStack([])
-    try
-      template(args...)
-    finally
-      result = @resetStack previous
-    return result.map(
-      (element) ->
-        if typeof element is 'string' then element
-        else ReactDOM.renderToStaticMarkup(element)
-    ).join('')
-
   isSelector: (string) ->
     string.length > 1 and string.charAt(0) in ['#', '.']
 
@@ -138,8 +124,8 @@ class Teact
 
   text: (s) ->
     return s unless s?.toString
-    console.log 'pushing', s
     @stack?.push(s.toString())
+    return s.toString()
 
   #
   # Plugins
@@ -154,7 +140,7 @@ class Teact
     bound = {}
 
     boundMethodNames = [].concat(
-      'component ie normalizeArgs render script crel text use'.split(' ')
+      'component ie normalizeArgs script crel text use'.split(' ')
       merge_elements 'regular', 'obsolete', 'void', 'obsolete_void'
     )
     for method in boundMethodNames

@@ -1,5 +1,6 @@
 expect = require 'expect.js'
-{render, a, br, div} = require '../src/teact'
+{a, br, div} = require '../src/teact'
+{render} = require './helpers'
 
 describe 'Attributes', ->
 

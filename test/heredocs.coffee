@@ -1,5 +1,6 @@
 expect = require 'expect.js'
-{render, script} = require '../src/teact'
+{script} = require '../src/teact'
+{render} = require './helpers'
 
 describe 'HereDocs', ->
   it 'preserves line breaks', ->

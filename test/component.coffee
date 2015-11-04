@@ -1,5 +1,6 @@
 expect = require 'expect.js'
-{component, div, render, img, text, button} = require '../src/teact'
+{component, div, img, text, button} = require '../src/teact'
+{render} = require './helpers'
 
 describe 'Component', ->
 
