@@ -1,6 +1,6 @@
 {
   "name": "teact",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Generate React elements with CoffeeScript functions",
   "homepage": "http://goodeggs.github.com/teact/",
   "license": "MIT",
