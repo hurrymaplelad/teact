@@ -140,7 +140,7 @@ class Teact
     bound = {}
 
     boundMethodNames = [].concat(
-      'component ie normalizeArgs script crel text use'.split(' ')
+      'ie normalizeArgs script crel text use'.split(' ')
       merge_elements 'regular', 'obsolete', 'void', 'obsolete_void'
     )
     for method in boundMethodNames
@@ -148,17 +148,6 @@ class Teact
         bound[method] = (args...) => @[method].apply @, args
 
     return bound
-
-  component: (func) ->
-    (args...) =>
-      {selector, attrs, contents} = @normalizeArgs(args)
-      renderContents = (args...) =>
-        switch typeof contents
-          when 'string'
-            @text contents
-          when 'function'
-            contents(args...)
-      func.apply @, [selector, attrs, renderContents]
 
 for tagName in merge_elements 'regular', 'obsolete'
   do (tagName) ->
