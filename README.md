@@ -39,7 +39,7 @@ Use it from your component's render method:
 
 class Widget extends Component
   render: ->
-    crel 'div', className: 'foo', ->
+    crel 'div', className: 'foo', =>
       crel 'div', 'bar'
 ```
 
@@ -48,7 +48,7 @@ Or in a [stateless component](https://facebook.github.io/react/docs/reusable-com
 ```coffee
 module.exports = (props) ->
   crel 'div', className: 'foo', ->
-    crel 'div', 'bar'
+    crel 'div', props.bar
 ```
 
 ### Nesting Components
@@ -79,7 +79,7 @@ terser syntax if you're into that:
 ```coffee
 T = require 'teact'
 
-T.div 'div', className: 'foo', ->
+T.div className: 'foo', ->
   T.text 'Blah!'
 ```
 
@@ -88,7 +88,7 @@ or the Teacup / CoffeeCup signatures:
 ```coffee
 {div, text} = require 'teact'
 
-div 'div', '.foo', ->
+div '.foo', ->
   text 'Blah!'
 ```
 
