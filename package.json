@@ -1,0 +1,42 @@
+{
+  "name": "teact",
+  "version": "0.0.0",
+  "description": "Generate React elements with CoffeeScript functions",
+  "homepage": "http://goodeggs.github.com/teact/",
+  "license": "MIT",
+  "main": "lib/teact",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/goodeggs/teact.git"
+  },
+  "keywords": [
+    "react",
+    "cjsx",
+    "coffeescript",
+    "coffee-script",
+    "teacup",
+    "coffee",
+    "template",
+    "render",
+    "view",
+    "html",
+    "coffeekup",
+    "coffeecup",
+    "drykup",
+    "express"
+  ],
+  "devDependencies": {
+    "coffee-script": ">=1.8.0",
+    "mocha": "*",
+    "expect.js": "*"
+  },
+  "scripts": {
+    "pretest": "npm run compile",
+    "prepublish": "npm run compile",
+    "test": "mocha",
+    "compile": "coffee --compile --output lib/ src/"
+  },
+  "dependencies": {
+    "react": "^0.14.2"
+  }
+}
