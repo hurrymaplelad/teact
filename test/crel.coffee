@@ -10,10 +10,6 @@ describe 'crel', ->
     expect(render -> p 1).to.equal '<p>1</p>'
     expect(render -> p 0).to.equal '<p>0</p>'
 
-  it 'renders Dates', ->
-    date = new Date(2013,1,1)
-    expect(render -> p date).to.equal "<p>#{date.toString()}</p>"
-
   it "renders undefined as ''", ->
     expect(render -> p undefined).to.equal "<p></p>"
 

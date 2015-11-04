@@ -14,7 +14,7 @@ It's also quite simple, just a thin wrapper around [React.createElement](https:/
 {crel} = require 'teact'
 
 crel 'div', '#root.container', ->
-  unless @props.signedIn
+  unless props.signedIn
     crel 'button', onClick: handleOnClick, 'Sign In'
   crel.text 'Welcome!'
 ```
@@ -24,7 +24,7 @@ Transforms into:
 ```coffee
 React.createElement('div',
   {id: root, className: 'container'}, [
-    (@props.signedIn ? React.createElement('button',
+    (props.signedIn ? React.createElement('button',
       {onClick: handleOnClick}, 'Sign In'
     ) : null)
     'Welcome!'
@@ -59,7 +59,7 @@ so you can pass it components instead of crel names:
 ```coffee
 class DooDad extends Component
   render: ->
-    crel 'div', className: 'doodad', ->
+    crel 'div', className: 'doodad', =>
       crel 'span', @props.children
 
 class Widget extends Component
@@ -67,8 +67,8 @@ class Widget extends Component
     # ...
 
   render: ->
-    crel 'div', className: 'foo', ->
-      crel DooDad, onFiddled: @handleFiddle, ->
+    crel 'div', className: 'foo', =>
+      crel DooDad, onFiddled: @handleFiddle, =>
         crel 'div', "I'm passed to DooDad.props.children"
 ```
 

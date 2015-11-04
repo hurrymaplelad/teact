@@ -70,7 +70,7 @@ class Teact
         when 'function', 'number', 'boolean'
           contents = arg
         when 'object'
-          if arg.constructor == Object
+          if arg.constructor == Object and not React.isValidElement arg
             attrs = Object.keys(arg).reduce(
               (clone, key) -> clone[key] = arg[key]; clone
               {}
@@ -111,7 +111,7 @@ class Teact
     if children?.splice
       el = React.createElement tagName, attrs, children...
     else
-      el = React.createElement tagName, attrs, children?.toString()
+      el = React.createElement tagName, attrs, children
 
     @stack?.push el
     return el
