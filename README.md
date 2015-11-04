@@ -97,7 +97,7 @@ Legacy
 
 [Markaby](http://github.com/markaby/markaby) begat [CoffeeKup](http://github.com/mauricemach/coffeekup) begat
 [CoffeeCup](http://github.com/gradus/coffeecup) and [DryKup](http://github.com/mark-hahn/drykup) which begat
-[Teacup](http://github.com/goodeggs/teacup) which begat **React**.
+[Teacup](http://github.com/goodeggs/teacup) which begat **Teact**.
 
 Contributing
 -------------
