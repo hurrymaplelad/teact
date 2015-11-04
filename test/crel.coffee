@@ -1,5 +1,5 @@
 expect = require 'expect.js'
-{p, div, script} = require '../src/teact'
+{crel, p, div, script} = require '../src/teact'
 {render} = require './helpers'
 
 describe 'crel', ->
@@ -21,3 +21,6 @@ describe 'crel', ->
     template = ->
       script src: 'js/app.js'
     expect(render template).to.equal('<script src="js/app.js"></script>')
+
+  it 'renders text tags as strings', ->
+    expect(render -> crel.text "Foo").to.equal 'Foo'

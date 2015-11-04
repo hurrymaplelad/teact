@@ -16,7 +16,7 @@ It's also quite simple, just a thin wrapper around [React.createElement](https:/
 crel 'div', '#root.container', ->
   unless @props.signedIn
     crel 'button', onClick: handleOnClick, 'Sign In'
-  crel 'text', 'Welcome!'
+  crel.text 'Welcome!'
 ```
 
 Transforms into:
@@ -80,7 +80,7 @@ terser syntax if you're into that:
 T = require 'teact'
 
 T.div 'div', className: 'foo', ->
-    T.text 'Blah!'
+  T.text 'Blah!'
 ```
 
 or the Teacup / CoffeeCup signatures:

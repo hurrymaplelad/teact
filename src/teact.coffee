@@ -147,6 +147,7 @@ class Teact
       do (method) =>
         bound[method] = (args...) => @[method].apply @, args
 
+    bound.crel.text = bound.text
     return bound
 
 for tagName in merge_elements 'regular', 'obsolete'
