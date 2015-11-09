@@ -121,6 +121,8 @@ It's also lightweight, at 5KB minified, 2KB gzipped.
 - [Nice syntax errors](https://github.com/jsdf/coffee-react/issues/32).
 - Half the lines of code. Those closing tags really add up.
 
+Other folks have [reached similar conclusions](https://slack-files.com/T024L9M0Y-F02HP4JM3-80d714).  They were later [bit by using the React API directly](https://github.com/planningcenter/react-patterns#jsx) when the implementation changed.  A thin wrapper like Teact should minimize this risk.
+
 ## Legacy
 
 [Markaby](http://github.com/markaby/markaby) begat [CoffeeKup](http://github.com/mauricemach/coffeekup) begat
