@@ -1,6 +1,6 @@
 # Teact
 
-It's better than cjsx.
+It's [better than cjsx](#how-is-this-better-than-cjsx).
 
 Build React element trees by composing functions.  
 You get full javascript control flow, and minimal boilerplate.
@@ -92,7 +92,7 @@ div '.foo', ->
   text 'Blah!'
 ```
 
-### Performance
+## Performance
 
 A [super-basic performance test](test/benchmarks/index.coffee) suggests that teact has no discernible impact on React rendering performance:
 
@@ -106,15 +106,28 @@ $ npm run benchmark
 
 It's also lightweight, at 5KB minified, 2KB gzipped.  
 
-Legacy
--------
+## How is this better than CJSX?
+
+- Familiar control flow with branching and loops.  See examples above.
+- No transpiler to [maintain](https://github.com/jsdf/coffee-react/issues/28).
+- No [extraneous enclosing tags](https://babeljs.io/repl/#?experimental=false&evaluate=true&loose=false&spec=false&code=%3Cdiv%3E%3C%2Fdiv%3E%0A%3Cdiv%3E%3C%2Fdiv%3E) required:
+  ```coffee
+  renderHeader: ->
+    unless @props.signedIn
+      crel 'a', href: '...', 'Sign in'
+    crel 'h1', 'Tea Shop'
+  ```
+  Just works.
+- [Nice syntax errors](https://github.com/jsdf/coffee-react/issues/32).
+- Half the lines of code. Those closing tags really add up.
+
+## Legacy
 
 [Markaby](http://github.com/markaby/markaby) begat [CoffeeKup](http://github.com/mauricemach/coffeekup) begat
 [CoffeeCup](http://github.com/gradus/coffeecup) and [DryKup](http://github.com/mark-hahn/drykup) which begat
 [Teacup](http://github.com/goodeggs/teacup) which begat **Teact**.
 
-Contributing
--------------
+## Contributing
 
 ```sh
 $ git clone https://github.com/hurrymaplad/teact && cd teact
