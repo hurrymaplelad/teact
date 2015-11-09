@@ -4,7 +4,7 @@ It's better than cjsx.
 
 Build React element trees by composing functions.  
 You get full javascript control flow, and minimal boilerplate.
-It's also quite simple, just a thin wrapper around [React.createElement](https://facebook.github.io/react/docs/top-level-api.html#react.createelement) like JSX.
+It's also quite simple, just a thin wrapper around [React.createElement](https://facebook.github.io/react/docs/top-level-api.html#react.createelement) like JSX, making [fast](#performance) and lightweight (2KB gzipped).
 
 [![Build Status](http://img.shields.io/travis/hurrymaplelad/teact.svg?style=flat-square)](https://travis-ci.org/hurrymaplelad/teact)
 [![NPM version](http://img.shields.io/npm/v/teact.svg?style=flat-square)](https://www.npmjs.org/package/teact)
@@ -91,6 +91,20 @@ or the Teacup / CoffeeCup signatures:
 div '.foo', ->
   text 'Blah!'
 ```
+
+### Performance
+
+A [super-basic performance test](test/benchmarks/index.coffee) suggests that teact has no discernible impact on React rendering performance:
+
+```sh
+$ npm run benchmark
+
+> native x 5,197 ops/sec ±3.30% (76 runs sampled)
+> teact x 5,339 ops/sec ±2.23% (82 runs sampled)
+> Fastest is teact,native
+```
+
+It's also lightweight, at 5KB minified, 2KB gzipped.  
 
 Legacy
 -------

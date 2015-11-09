@@ -26,6 +26,7 @@
     "express"
   ],
   "devDependencies": {
+    "benchmark": "^1.0.0",
     "coffee-script": ">=1.8.0",
     "expect.js": "^0.3.1",
     "mocha": "^2.3.3",
@@ -35,7 +36,8 @@
     "pretest": "npm run compile",
     "prepublish": "npm run compile",
     "test": "mocha",
-    "compile": "coffee --compile --output lib/ src/"
+    "compile": "coffee --compile --output lib/ src/",
+    "benchmark": "coffee test/benchmarks"
   },
   "dependencies": {
     "react": "^0.14.2"
