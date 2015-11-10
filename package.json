@@ -2,12 +2,12 @@
   "name": "teact",
   "version": "1.0.1",
   "description": "Generate React elements with CoffeeScript functions",
-  "homepage": "http://goodeggs.github.com/teact/",
+  "homepage": "http://github.com/hurrymaplelad/teact",
   "license": "MIT",
   "main": "lib/teact",
   "repository": {
     "type": "git",
-    "url": "git://github.com/goodeggs/teact.git"
+    "url": "git://github.com/hurrymaplelad/teact.git"
   },
   "keywords": [
     "react",
