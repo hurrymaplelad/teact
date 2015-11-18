@@ -22,11 +22,12 @@ describe 'nesting templates', ->
     it 'returns components without adding them to the parent stack', ->
 
       nameHelper = pureComponent (user) ->
-        p ->
+        [
           span user.first
           span user.last
+        ].reverse()
 
       template = (user) ->
-        div nameHelper(user).reverse()
+        div nameHelper(user)
 
-      expect(render template, user).to.equal '<div><p><span>Huevo</span><span>Bueno</span></p></div>'
+      expect(render template, user).to.equal '<div><span>Bueno</span><span>Huevo</span></div>'

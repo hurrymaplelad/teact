@@ -88,7 +88,6 @@ Teas = pureComponent (teas) ->
     crel 'div', tea
   .reverse()
 
-
 class Widget extends Component
   render: ->
     crel 'div', Teas(@props.teas)

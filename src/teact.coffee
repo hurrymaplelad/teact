@@ -121,9 +121,9 @@ class Teact
   pureComponent: (contents) ->
     teact = @
     return ->
-      previous = teact.resetStack []
-      contents.apply teact, arguments
-      children = teact.resetStack previous
+      previous = teact.resetStack null
+      children = contents.apply teact, arguments
+      teact.resetStack previous
       return children
 
   selfClosingTag: (tagName, args...) ->
