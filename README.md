@@ -70,6 +70,28 @@ class Widget extends Component
     crel 'div', className: 'foo', =>
       crel DooDad, onFiddled: @handleFiddle, =>
         crel 'div', "I'm passed to DooDad.props.children"
+
+```
+
+If you need to build up a tree of elements inside a component's render method, you can
+escape the element stack via the `pureComponent` helper:
+
+```coffee
+{crel, pureComponent} = require 'teact'
+
+Teas = pureComponent (teas) ->
+  teas.map (tea) ->
+    # Without pureComponent, this would add teas to the element tree
+    # in iteration order.  With pureComponent, we just return the reversed list
+    # of divs without adding the element tree.  The caller may choose to add
+    # the returned list.
+    crel 'div', tea
+  .reverse()
+
+
+class Widget extends Component
+  render: ->
+    crel 'div', Teas(@props.teas)
 ```
 
 ### Sugar Syntax

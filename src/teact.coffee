@@ -116,6 +116,14 @@ class Teact
     @stack?.push el
     return el
 
+  pureComponent: (contents) ->
+    teact = @
+    return ->
+      previous = teact.resetStack []
+      contents.apply teact, arguments
+      children = teact.resetStack previous
+      return children
+
   selfClosingTag: (tagName, args...) ->
     {attrs, contents} = @normalizeArgs args
     if contents
@@ -140,7 +148,7 @@ class Teact
     bound = {}
 
     boundMethodNames = [].concat(
-      'ie normalizeArgs script crel text use'.split(' ')
+      'ie normalizeArgs script crel pureComponent text use'.split(' ')
       merge_elements 'regular', 'obsolete', 'void', 'obsolete_void'
     )
     for method in boundMethodNames
