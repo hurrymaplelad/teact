@@ -98,6 +98,8 @@ class Teact
     return {attrs, contents, selector}
 
   crel: (tagName, args...) ->
+    unless tagName?
+      throw new Error "Element type is invalid: expected a string (for built-in components) or a class/function (for composite components) but got: #{tagName}"
     {attrs, contents} = @normalizeArgs args
 
     switch typeof contents

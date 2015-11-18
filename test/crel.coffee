@@ -20,3 +20,6 @@ describe 'crel', ->
 
   it 'renders text tags as strings', ->
     expect(render -> crel.text "Foo").to.equal 'Foo'
+
+  it 'throws on undefined element types', ->
+    expect(-> crel undefined, className: 'foo').to.throwException /got: undefined/
