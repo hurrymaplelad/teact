@@ -132,12 +132,14 @@ It's also lightweight, at 5KB minified, 2KB gzipped.
 - Familiar control flow with branching and loops.  See examples above.
 - No transpiler to [maintain](https://github.com/jsdf/coffee-react/issues/28).
 - No [extraneous enclosing tags](https://babeljs.io/repl/#?experimental=false&evaluate=true&loose=false&spec=false&code=%3Cdiv%3E%3C%2Fdiv%3E%0A%3Cdiv%3E%3C%2Fdiv%3E) required:
+
   ```coffee
   renderHeader: ->
     unless @props.signedIn
       crel 'a', href: '...', 'Sign in'
     crel 'h1', 'Tea Shop'
   ```
+
   Just works.
 - [Nice syntax errors](https://github.com/jsdf/coffee-react/issues/32).
 - Half the lines of code. Those closing tags really add up.
