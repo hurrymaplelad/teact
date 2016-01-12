@@ -1,6 +1,6 @@
 expect = require 'expect.js'
-teacup = require '../src/teact'
+teact = require '../src/teact'
 
 describe 'plugins', ->
   it 'are applied via use', ->
-    expect(teacup.use).to.be.a 'function'
+    expect(teact.use).to.be.a 'function'
