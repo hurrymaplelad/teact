@@ -4,7 +4,7 @@ It's [better than cjsx](#how-is-this-better-than-cjsx).
 
 Build React element trees by composing functions.  
 You get full javascript control flow, and minimal boilerplate.
-It's also quite simple, just a thin wrapper around [React.createElement](https://facebook.github.io/react/docs/top-level-api.html#react.createelement) like JSX, making [fast](#performance) and lightweight (2KB gzipped).
+It's also quite simple, just a thin wrapper around [React.createElement](https://facebook.github.io/react/docs/top-level-api.html#react.createelement) like JSX, making it [fast](#performance) and lightweight (2KB gzipped).
 
 [![Build Status](http://img.shields.io/travis/hurrymaplelad/teact.svg?style=flat-square)](https://travis-ci.org/hurrymaplelad/teact)
 [![NPM version](http://img.shields.io/npm/v/teact.svg?style=flat-square)](https://www.npmjs.org/package/teact)
