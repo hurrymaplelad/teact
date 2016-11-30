@@ -30,7 +30,7 @@
     "coffee-script": ">=1.8.0",
     "expect.js": "^0.3.1",
     "mocha": "^2.3.3",
-    "react-dom": "^0.14.2"
+    "react-dom": "^15.4.1"
   },
   "scripts": {
     "pretest": "npm run compile",
@@ -40,6 +40,6 @@
     "benchmark": "coffee test/benchmarks"
   },
   "dependencies": {
-    "react": "^0.14.2"
+    "react": "^15.4.1"
   }
 }
